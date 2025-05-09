@@ -138,8 +138,12 @@ Modelado Predictivo:
 Desarrollar modelos para predecir el abandono de clientes (Churn Prediction).
 Estimar el Valor de Vida del Cliente (Customer Lifetime Value - CLV).
 Construir sistemas de recomendación de productos.
-👨‍💻 Autor
+
+
+👨‍💻 
+Autor
 oliver1917alejandro
 
 GitHub: https://github.com/oliver1917alejandro
+
 LinkedIn: www.linkedin.com/in/oliver-rubio/
