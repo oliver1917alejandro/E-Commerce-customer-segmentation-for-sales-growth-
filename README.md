@@ -58,8 +58,6 @@ El análisis se basa en los siguientes archivos de datos, provenientes del [conj
 * `olist_order_reviews_dataset.csv`
 * `product_category_name_translation.csv`
 
-*(**Nota Importante:** Considera si vas a incluir todos los archivos CSV en el repositorio. Si son muy grandes, es preferible incluir solo una muestra o un enlace directo a la fuente original para evitar sobrecargar el repositorio).*
-
 ## ⚙️ Requisitos
 
 Para ejecutar este proyecto, necesitarás tener **Python 3.x** instalado junto con las siguientes bibliotecas esenciales:
@@ -69,9 +67,6 @@ Para ejecutar este proyecto, necesitarás tener **Python 3.x** instalado junto c
 * **matplotlib:** Para la creación de gráficos estáticos.
 * **seaborn:** Para la creación de visualizaciones estadísticas más atractivas.
 
-Puedes instalar estas dependencias fácilmente usando `pip`:
-```bash
-pip install pandas numpy matplotlib seaborn
 🔑 Resultados Clave del Análisis
 Resumen de Limpieza de Datos:
 Valores Faltantes Identificados (antes del tratamiento específico):
