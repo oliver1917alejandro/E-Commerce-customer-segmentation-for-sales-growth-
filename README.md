@@ -153,10 +153,3 @@ Estimar el Valor de Vida del Cliente (Customer Lifetime Value - CLV).
 Construir sistemas de recomendación de productos.
 
 
-👨‍💻 
-Autor
-oliver1917alejandro
-
-GitHub: https://github.com/oliver1917alejandro
-
-LinkedIn: www.linkedin.com/in/oliver-rubio/
