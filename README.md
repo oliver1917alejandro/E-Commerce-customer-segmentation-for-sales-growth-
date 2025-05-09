@@ -69,7 +69,40 @@ Para ejecutar este proyecto, necesitarás tener **Python 3.x** instalado junto c
 
 🔑 Resultados Clave del Análisis
 
-Resultados Clave del Análisis📊 Valores Faltantes Identificados (Antes del Tratamiento Específico):Hemos identificado la presencia de valores faltantes en varios de los datasets principales, lo cual es un paso crucial antes de proceder con análisis más profundos:olist_products_dataset.csv: Se encontraron 2,448 registros con valores faltantes en columnas que consideramos críticas para el análisis.olist_orders_dataset.csv: Presenta 4,908 registros con valores faltantes.olist_order_reviews_dataset.csv: Contiene un número significativo de valores faltantes, alcanzando los 145,903 registros.(Nota: El script actual permite identificar estos faltantes. Las estrategias específicas de imputación o eliminación se pueden implementar según los requisitos del análisis posterior).💰 Análisis de Precios (Sobre olist_order_items_dataset.csv):Un vistazo rápido a la distribución de precios de los ítems revela lo siguiente:Precio promedio del item: $120.65 BRLPrecio mínimo del item: $0.85 BRLPrecio máximo del item: $6735.00 BRL📏 Dimensiones de los Datos (Post-Limpieza Inicial y Merge Principal para RFM):Después del proceso inicial de limpieza y la fusión de datasets necesaria para el análisis RFM, tenemos las siguientes dimensiones:Clientes únicos analizados para RFM: 98,666📈 Resultados del Análisis RFM:La aplicación del modelo RFM (Recencia, Frecuencia, Valor Monetario) a nuestra base de clientes nos arroja las siguientes métricas promedio:Recencia Media: Aproximadamente 289 días. Esto sugiere que, en promedio, los clientes realizaron su última compra hace alrededor de 9 meses dentro del período de datos analizado.Frecuencia Media: Es de 1.0. Este valor indica que la gran mayoría de los clientes analizados ha realizado una única compra. Este es un patrón común en algunos modelos de negocio de e-commerce o durante períodos de tiempo específicos.Valor Monetario Medio: Se sitúa en aproximadamente $137.75 BRL por cliente.Espero que este resumen estructurado sea útil y fácil de entender para quienes visiten tu repositorio. ¡No dudes en añadir más detalles o visualizaciones!
+Resultados Clave del Análisis
+📊 Valores Faltantes Identificados (Antes del Tratamiento Específico):
+Hemos identificado la presencia de valores faltantes en varios de los datasets principales, lo cual es un paso crucial antes de proceder con análisis más profundos:
+
+olist_products_dataset.csv: Se encontraron 2,448 registros con valores faltantes en columnas que consideramos críticas para el análisis.
+
+olist_orders_dataset.csv: Presenta 4,908 registros con valores faltantes.
+
+olist_order_reviews_dataset.csv: Contiene un número significativo de valores faltantes, alcanzando los 145,903 registros.
+(Nota: El script actual permite identificar estos faltantes. Las estrategias específicas de imputación o eliminación se pueden implementar según los requisitos del análisis posterior).
+
+Análisis de Precios (Sobre olist_order_items_dataset.csv):
+Un vistazo rápido a la distribución de precios de los ítems revela lo siguiente:
+
+Precio promedio del item: $120.65 BRL
+
+Precio mínimo del item: $0.85 BRL
+
+Precio máximo del item: $6735.00 BRL
+
+📏 Dimensiones de los Datos (Post-Limpieza Inicial y Merge Principal para RFM):
+Después del proceso inicial de limpieza y la fusión de datasets necesaria para el análisis RFM, tenemos las siguientes dimensiones:
+
+Clientes únicos analizados para RFM: 98,666
+
+📈 Resultados del Análisis RFM:
+La aplicación del modelo RFM (Recencia, Frecuencia, Valor Monetario) a nuestra base de clientes nos arroja las siguientes métricas promedio:
+
+Recencia Media: Aproximadamente 289 días. Esto sugiere que, en promedio, los clientes realizaron su última compra hace alrededor de 9 meses dentro del período de datos analizado.
+
+Frecuencia Media: Es de 1.0. Este valor indica que la gran mayoría de los clientes analizados ha realizado una única compra. Este es un patrón común en algunos modelos de negocio de e-commerce o durante períodos de tiempo específicos.
+
+Valor Monetario Medio: Se sitúa en aproximadamente $137.75 BRL por cliente.
+
 
 
 Distribución de Clientes por Segmento:
