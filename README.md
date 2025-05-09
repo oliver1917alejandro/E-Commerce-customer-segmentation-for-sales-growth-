@@ -102,29 +102,42 @@ Características de los Segmentos (Medias):
 | ⚠️ En Riesgo        | 493                   | 1.0              | $140                        | No han comprado en mucho tiempo, gasto promedio.      |
 | 😥 Necesitan Atención | 528                   | 1.0              | $25                         | Clientes más antiguos y con el menor gasto.          |
 
+
+
 📢 Recomendaciones de Marketing Sugeridas
 Basándose en la segmentación RFM, se pueden proponer las siguientes estrategias:
+
 
 🌟 Campeones:
 Implementar programas de fidelización VIP.
 Ofrecer acceso anticipado a nuevos productos o colecciones.
 Incentivarlos a convertirse en embajadores de marca (e.g., mediante reseñas o referidos).
+
+
 💖 Leales:
 Fomentar la venta cruzada (cross-selling) y el up-selling con productos complementarios o de mayor valor.
 Implementar programas de referidos para que atraigan nuevos clientes.
 Solicitar reseñas de productos y servicios.
+
+
 💡 Potenciales:
 Enviar ofertas personalizadas basadas en su historial de compras anteriores.
 Ofrecer incentivos para aumentar la frecuencia de compra (e.g., descuentos por segunda compra).
 Comunicar novedades y beneficios de seguir comprando.
+
+
 ⚠️ En Riesgo:
 Lanzar campañas de reactivación con descuentos especiales o promociones exclusivas.
 Recordarles el valor y los beneficios de la marca.
 Realizar encuestas para entender por qué no han vuelto a comprar.
+
+
 😥 Necesitan Atención:
 Enviar recordatorios amigables y ofertas de "bienvenida de nuevo" muy atractivas.
 Ofrecer un incentivo significativo para incentivar una recompra y evaluar si se pueden recuperar.
 Considerar si es coste-efectivo intentar reactivar a todos los clientes de este segmento o enfocarse en aquellos con mayor potencial de gasto pasado.
+
+
 🚀 Futuras Mejoras / Próximos Pasos
 Manejo Avanzado de Valores Faltantes: Implementar estrategias más robustas como la imputación múltiple o modelos predictivos para rellenar datos faltantes.
 Análisis de Outliers: Realizar un análisis de outliers más detallado en las métricas RFM y aplicar técnicas de tratamiento si es necesario (e.g., winsorización).
