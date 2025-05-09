@@ -68,23 +68,32 @@ Para ejecutar este proyecto, necesitarás tener **Python 3.x** instalado junto c
 * **seaborn:** Para la creación de visualizaciones estadísticas más atractivas.
 
 🔑 Resultados Clave del Análisis
-Resumen de Limpieza de Datos:
+
 Valores Faltantes Identificados (antes del tratamiento específico):
+
 olist_products_dataset.csv: 2,448 registros con valores faltantes en columnas críticas.
 olist_orders_dataset.csv: 4,908 registros con valores faltantes.
 olist_order_reviews_dataset.csv: 145,903 registros con valores faltantes. (Nota: El script actual identifica estos faltantes. Se pueden implementar estrategias de imputación o eliminación más específicas según sea necesario).
+
+
 Análisis de Precios (sobre olist_order_items_dataset.csv):
+
 Precio promedio del item: $120.65 BRL
 Precio mínimo del item: $0.85 BRL
 Precio máximo del item: $6735.00 BRL
 Dimensiones de los Datos (Post-Limpieza Inicial y Merge Principal para RFM):
 Clientes únicos analizados para RFM: 98,666
+
+
 Resultados del Análisis RFM:
-Estadísticas Descriptivas Generales del RFM (para 98,666 clientes):
 
 Recencia Media: ~289 días (los clientes realizaron su última compra hace unos 9 meses en promedio).
+
 Frecuencia Media: 1.0 (esto indica que la gran mayoría de los clientes han realizado una sola compra en el periodo analizado, un comportamiento común en algunos mercados de e-commerce).
+
 Valor Monetario Medio: ~$137.75 BRL por cliente.
+
+
 Distribución de Clientes por Segmento:
 
 🌟 Campeones: 35,592 clientes
