@@ -1,164 +1,104 @@
-# 📊 E-commerce Data Analysis and Customer Segmentation (RFM) 🛍️
+# 📊 Análisis RFM de Clientes de E-commerce 🛍️
 
-This project performs a comprehensive analysis of an e-commerce dataset to understand customer behavior and segment them using the RFM (Recency, Frequency, Monetary Value) model. The main objective is to identify different customer groups to apply personalized and effective marketing strategies.
+Este proyecto realiza un análisis exhaustivo de un conjunto de datos de comercio electrónico para comprender el comportamiento de los clientes y segmentarlos utilizando el modelo RFM (Recencia, Frecuencia, Valor Monetario). El objetivo principal es identificar diferentes grupos de clientes para aplicar estrategias de marketing personalizadas y efectivas.
 
-## 🎯 Project Description
+## 🎯 Descripción del Proyecto
 
-The Python script (`your_script_name.py`) is designed to perform the following key tasks:
+El proyecto, contenido en el Jupyter Notebook `EcomerceProject.ipynb`, está diseñado para realizar las siguientes tareas clave:
 
-1.  💧 **Data Loading:** Import multiple CSV files containing detailed information about:
-    * Customers
-    * Orders
-    * Products
-    * Payments
-    * Geolocations
-    * Sellers
-    * Order Items
-    * Order Reviews
-2.  🧹 **Data Cleaning and Preparation (Data Wrangling):**
-    * Verification and reporting of missing values in each dataset.
-    * Identification and removal of duplicate records.
-    * Conversion of date/time columns to `datetime` format for temporal analysis.
-    * Basic exploratory analysis of prices (average, minimum, maximum).
-    * Translation of product category names from Portuguese to English for consistency.
-    * Feature engineering: Creation of new useful columns such as month and year of purchase, and calculation of delivery time.
-3.  📈 **RFM Analysis (Recency, Frequency, Monetary Value):**
-    * Calculation of:
-        * **Recency (R):** Days elapsed since the customer's last purchase.
-        * **Frequency (F):** Total number of purchases made by the customer.
-        * **Monetary Value (M):** Total spending by the customer.
-    * Segmentation of customers into 5 significant categories based on their RFM scores:
-        * 🌟 **Champions**
-        * 💖 **Loyal Customers**
-        * 💡 **Potential Loyalist**
-        * ⚠️ **At Risk**
-        * 😥 **Need Attention**
-4.  🖼️ **Results Visualization:**
-    * Generation of charts to illustrate the distribution of customers by each RFM segment.
-        * *Visualization of segment distribution:*
-            ![RFM Segment Distribution](segmentos_rfm.png)
-    * Visualization of the average Recency, Frequency, and Monetary Value metrics for each segment, allowing a clear comparison of their characteristics.
-        * *Average RFM metrics per segment:*
-            ![Average Metrics per RFM Segment](metricas_por_segmento.png)
-5.  📤 **Exporting Results:**
-    * Saving the RFM segmentation table, with each customer assigned to a segment, to a CSV file (`customer_rfm_segmentation.csv`). This file is ideal for use in targeted marketing campaigns or other subsequent analyses.
-    * Saving the generated visualizations as image files (`segmentos_rfm.png`, `metricas_por_segmento.png`).
+1.  💧 **Carga de Datos:** Importación de múltiples archivos CSV que contienen información detallada sobre clientes, pedidos, productos, pagos, geolocalizaciones, vendedores, ítems de pedidos y reseñas de pedidos.
+2.  🧹 **Limpieza y Preparación de Datos (Data Wrangling):**
+    *   Verificación y reporte de valores faltantes en cada conjunto de datos.
+    *   Identificación y eliminación de registros duplicados.
+    *   Conversión de columnas de fecha/hora al formato `datetime` para análisis temporales.
+    *   Análisis exploratorio básico de precios (promedio, mínimo, máximo).
+    *   Traducción de nombres de categorías de productos del portugués al inglés para consistencia.
+    *   Ingeniería de características: Creación de nuevas columnas útiles como mes y año de compra, y cálculo del tiempo de entrega.
+3.  📈 **Análisis RFM (Recencia, Frecuencia, Valor Monetario):**
+    *   Cálculo de:
+        *   **Recencia (R):** Días transcurridos desde la última compra del cliente.
+        *   **Frecuencia (F):** Número total de compras (transacciones únicas) realizadas por el cliente.
+        *   **Valor Monetario (M):** Gasto total realizado por el cliente.
+    *   Segmentación de clientes en categorías significativas basadas en sus puntuaciones RFM (e.g., Campeones, Leales, En Riesgo, etc.).
+    *   **Nota Importante sobre la Frecuencia**: Es importante destacar que, para este conjunto de datos particular, la métrica de Frecuencia en el análisis RFM mostró una varianza mínima, con la mayoría de los clientes teniendo una sola transacción registrada en el período analizado. Por lo tanto, la segmentación se basa principalmente en la Recencia y el Valor Monetario.
+4.  🖼️ **Visualización de Resultados:**
+    *   `segmentos_rfm.png`: Gráfico de barras que muestra la distribución de clientes entre los diferentes segmentos RFM (e.g., Campeones, Leales, etc.), permitiendo visualizar el tamaño de cada grupo.
+    *   `metricas_por_segmento.png`: Gráficos de barras que comparan las métricas promedio de Recencia, Frecuencia y Valor Monetario para cada segmento de clientes, facilitando la comprensión de sus características distintivas.
+    *   `rfm_heatmap_segmentos.png`: Heatmap que visualiza las métricas RFM promedio (Recencia, Frecuencia, Valor Monetario) para cada segmento, ofreciendo una vista consolidada y comparativa de sus perfiles.
+    *   `rfm_scatter_recency_frequency.png`: Diagrama de dispersión que muestra la relación entre la Recencia y la Frecuencia de los clientes. Los puntos están coloreados y dimensionados según su Valor Monetario, ayudando a identificar clusters de clientes y patrones de comportamiento.
+5.  📤 **Exportación de Resultados:**
+    *   Guardado de la tabla de segmentación RFM, con cada cliente asignado a un segmento, en un archivo CSV (`segmentacion_clientes_rfm.csv`). Este archivo es ideal para uso en campañas de marketing dirigidas u otros análisis subsecuentes.
+    *   Guardado de las visualizaciones generadas como archivos de imagen (`.png`).
 
-## 📚 Datasets Used
+## 📚 Origen de los Datos
 
-The analysis is based on the following data files, from the [Olist E-Commerce dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce):
+El análisis se basa en archivos de datos del [conjunto de datos de Olist E-Commerce en Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), que incluyen información sobre clientes, pedidos, productos, etc.
 
-* `olist_customers_dataset.csv`
-* `olist_geolocation_dataset.csv`
-* `olist_order_payments_dataset.csv`
-* `olist_products_dataset.csv`
-* `olist_sellers_dataset.csv`
-* `olist_orders_dataset.csv`
-* `olist_order_items_dataset.csv`
-* `olist_order_reviews_dataset.csv`
-* `product_category_name_translation.csv`
+## 🔑 Archivos Clave del Proyecto
 
-## ⚙️ Requirements
+*   `EcomerceProject.ipynb`: El Jupyter Notebook que contiene todo el código de análisis, desde la carga de datos hasta la visualización y exportación de resultados.
+*   `*.csv`: Archivos CSV con los datos de origen (no incluidos en este repositorio, deben descargarse de Kaggle).
+*   `*.png`: Imágenes de los gráficos generados por el análisis (e.g., `segmentos_rfm.png`, `metricas_por_segmento.png`, `rfm_heatmap_segmentos.png`, `rfm_scatter_recency_frequency.png`).
 
-To run this project, you will need **Python 3.x** installed along with the following essential libraries:
+## ⚙️ Requisitos y Ejecución
 
-* **pandas:** For data manipulation and analysis.
-* **numpy:** For numerical operations.
-* **matplotlib:** For creating static charts.
-* **seaborn:** For creating more attractive statistical visualizations.
+Para ejecutar este proyecto, necesitará **Python 3.x** instalado junto con las siguientes bibliotecas esenciales:
 
-🔑 Key Analysis Results
+*   **pandas:** Para manipulación y análisis de datos.
+*   **numpy:** Para operaciones numéricas.
+*   **matplotlib:** Para crear gráficos estáticos.
+*   **seaborn:** Para crear visualizaciones estadísticas más atractivas.
 
-📊 Missing Values Identified (Before Specific Treatment):
-We have identified the presence of missing values in several of the main datasets, which is a crucial step before proceeding with deeper analyses:
+El análisis completo se puede ejecutar ejecutando las celdas del Jupyter Notebook `EcomerceProject.ipynb` en un entorno Python configurado con las bibliotecas mencionadas.
 
-`olist_products_dataset.csv`: 2,448 records were found with missing values in columns considered critical for the analysis.
+## 📊 Resultados Clave del Análisis (Ejemplo basado en el Notebook)
 
-`olist_orders_dataset.csv`: Presents 4,908 records with missing values.
+(Esta sección resume los hallazgos típicos que el notebook puede generar. Los valores exactos pueden variar según la ejecución o pequeñas modificaciones en el preprocesamiento.)
 
-`olist_order_reviews_dataset.csv`: Contains a significant number of missing values, reaching 145,903 records.
-(Note: The current script allows for the identification of these missing values. Specific imputation or deletion strategies can be implemented according to the requirements of the subsequent analysis).
+*   **Valores Faltantes Identificados (Antes del Tratamiento Específico):**
+    *   `olist_products_dataset.csv`: ~2,448 registros con valores faltantes.
+    *   `olist_orders_dataset.csv`: ~4,908 registros con valores faltantes.
+    *   `olist_order_reviews_dataset.csv`: ~145,903 registros con valores faltantes.
+*   **Análisis de Precios (Sobre `olist_order_items_dataset.csv`):**
+    *   Precio promedio del ítem: ~$120.65 BRL
+    *   Precio mínimo del ítem: $0.85 BRL
+    *   Precio máximo del ítem: $6735.00 BRL
+*   **Dimensiones de Datos (Post-Limpieza y Merge para RFM):**
+    *   Clientes únicos analizados para RFM: ~98,666
+*   **Resultados del Análisis RFM:**
+    *   Recencia Promedio: ~289 días.
+    *   Frecuencia Promedio: 1.0 (Nota: la mayoría de los clientes tienen una sola compra, como se mencionó anteriormente).
+    *   Valor Monetario Promedio: ~$137.75 BRL por cliente.
+*   **Distribución de Clientes por Segmento (Ejemplo):**
+    *   🌟 Campeones: ~35,592 clientes
+    *   💡 Potenciales Leales: ~19,965 clientes
+    *   💖 Clientes Leales: ~19,540 clientes
+    *   ⚠️ En Riesgo: ~19,393 clientes
+    *   😥 Necesitan Atención: ~4,176 clientes
 
-Price Analysis (On `olist_order_items_dataset.csv`):
-A quick look at the distribution of item prices reveals the following:
+*   **Características de los Segmentos (Promedios Ejemplo):**
 
-Average item price: $120.65 BRL
+| Segmento             | Recencia Prom. (días) | Frecuencia Prom. | Valor Monetario Prom. (BRL) |
+|---------------------|------------------------|-------------------|------------------------------|
+| 🌟 Campeones        | 136                    | 1.0               | $153                         |
+| 💖 Clientes Leales  | 255                    | 1.0               | $131                         |
+| 💡 Potenciales Leales | 348                    | 1.0               | $139                         |
+| ⚠️ En Riesgo          | 493                    | 1.0               | $140                         |
+| 😥 Necesitan Atención   | 528                    | 1.0               | $25                          |
 
-Minimum item price: $0.85 BRL
+## 📢 Recomendaciones de Marketing Sugeridas
 
-Maximum item price: $6735.00 BRL
+Basado en la segmentación RFM, se pueden proponer las siguientes estrategias:
 
-📏 Data Dimensions (Post-Initial Cleaning and Main Merge for RFM):
-After the initial cleaning process and the necessary dataset merging for RFM analysis, we have the following dimensions:
+*   **🌟 Campeones:** Implementar programas de lealtad VIP. Ofrecer acceso temprano a nuevos productos. Fomentar que se conviertan en embajadores de la marca.
+*   **💖 Clientes Leales:** Fomentar la venta cruzada y el up-selling. Implementar programas de referidos. Solicitar reseñas de productos y servicios.
+*   **💡 Potenciales Leales:** Enviar ofertas personalizadas. Ofrecer incentivos para aumentar la frecuencia de compra. Comunicar novedades y beneficios.
+*   **⚠️ En Riesgo:** Lanzar campañas de reactivación con descuentos especiales. Recordarles el valor de la marca. Realizar encuestas para entender por qué no han vuelto a comprar.
+*   **😥 Necesitan Atención:** Enviar recordatorios amigables y ofertas de "bienvenida de nuevo" muy atractivas. Considerar la rentabilidad de intentar reactivar a todos los clientes de este segmento.
 
-Unique customers analyzed for RFM: 98,666
-
-📈 RFM Analysis Results:
-Applying the RFM (Recency, Frequency, Monetary Value) model to our customer base yields the following average metrics:
-
-Average Recency: Approximately 289 days. This suggests that, on average, customers made their last purchase about 9 months ago within the analyzed data period.
-
-Average Frequency: Is 1.0. This value indicates that the vast majority of analyzed customers have made a single purchase. This is a common pattern in some e-commerce business models or during specific time periods.
-
-Average Monetary Value: Stands at approximately $137.75 BRL per customer.
-
-Customer Distribution by Segment:
-
-🌟 Champions: 35,592 customers
-💡 Potential Loyalist: 19,965 customers
-💖 Loyal Customers: 19,540 customers
-⚠️ At Risk: 19,393 customers
-😥 Need Attention: 4,176 customers
-
-Segment Characteristics (Averages):
-
-| Segment             | Average Recency (days) | Average Frequency | Average Monetary Value (BRL) | Brief Description                                   |
-|---------------------|------------------------|-------------------|------------------------------|-----------------------------------------------------|
-| 🌟 Champions        | 136                    | 1.0               | $153                         | Most recent customers, spending above average.      |
-| 💖 Loyal Customers  | 255                    | 1.0               | $131                         | Purchased a moderate time ago, average spending.    |
-| 💡 Potential Loyalist | 348                    | 1.0               | $139                         | Purchased longer ago, average spending.             |
-| ⚠️ At Risk          | 493                    | 1.0               | $140                         | Haven't purchased in a long time, average spending. |
-| 😥 Need Attention   | 528                    | 1.0               | $25                          | Oldest customers with the lowest spending.          |
-
-📢 Suggested Marketing Recommendations
-Based on RFM segmentation, the following strategies can be proposed:
-
-🌟 Champions:
-Implement VIP loyalty programs.
-Offer early access to new products or collections.
-Encourage them to become brand ambassadors (e.g., through reviews or referrals).
-
-💖 Loyal Customers:
-Encourage cross-selling and up-selling with complementary or higher-value products.
-Implement referral programs to attract new customers.
-Request product and service reviews.
-
-💡 Potential Loyalist:
-Send personalized offers based on their previous purchase history.
-Offer incentives to increase purchase frequency (e.g., discounts for a second purchase).
-Communicate news and benefits of continued shopping.
-
-⚠️ At Risk:
-Launch reactivation campaigns with special discounts or exclusive promotions.
-Remind them of the brand's value and benefits.
-Conduct surveys to understand why they haven't returned to purchase.
-
-😥 Need Attention:
-Send friendly reminders and very attractive "welcome back" offers.
-Offer a significant incentive to encourage a repurchase and assess if they can be recovered.
-Consider whether it is cost-effective to try to reactivate all customers in this segment or focus on those with greater past spending potential.
-
-🚀 Future Improvements / Next Steps
-Advanced Missing Value Handling: Implement more robust strategies such as multiple imputation or predictive models to fill in missing data.
-Outlier Analysis: Perform a more detailed outlier analysis on RFM metrics and apply treatment techniques if necessary (e.g., winsorization).
-RFM Segmentation Optimization: Explore different scoring methods (e.g., based on fixed percentiles or k-means clustering on RFM metrics) and vary the number of thresholds/segments.
-Deepen EDA:
-Analysis of best-selling products by segment.
-Geographic analysis of customers and its impact on purchasing behavior.
-Identification of temporal trends in sales and customer behavior.
-Analysis of the effectiveness of different payment methods.
-Predictive Modeling:
-Develop models to predict customer churn (Churn Prediction).
-Estimate Customer Lifetime Value (CLV).
-Build product recommendation systems.
-
+## 🚀 Mejoras Futuras / Próximos Pasos
+*   Manejo Avanzado de Valores Faltantes.
+*   Análisis Detallado de Valores Atípicos en métricas RFM.
+*   Optimización de la Segmentación RFM (explorar clustering k-means, diferentes umbrales).
+*   Profundizar en el Análisis Exploratorio de Datos (EDA): productos más vendidos por segmento, análisis geográfico, tendencias temporales, etc.
+*   Modelado Predictivo: Predicción de abandono de clientes (Churn), estimación del Valor de Vida del Cliente (CLV), sistemas de recomendación de productos.
